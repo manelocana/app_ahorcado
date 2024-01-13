@@ -11,8 +11,14 @@ class JuegoAhorcado:
         self.intentos_maximos = 6
         self.intentos_realizados = 0
 
+        self.enunciado = tk.Label(text="Devinez l'animal...")
+        self.enunciado.pack(pady=30)
+
         self.etiqueta_palabra = tk.Label(master, text=self.obtener_palabra_oculta())
         self.etiqueta_palabra.pack(pady=10)
+
+        self.uneletre = tk.Label(text= "entrez une lettre:")
+        self.uneletre.pack(pady=5)
 
         self.entry_letra = tk.Entry(master)
         self.entry_letra.pack(pady=10)
@@ -54,5 +60,6 @@ class JuegoAhorcado:
 
 if __name__ == "__main__":
     root = tk.Tk()
+    root.geometry("400x300")
     juego = JuegoAhorcado(root)
     root.mainloop()
