@@ -17,7 +17,7 @@ class JuegoAhorcado:
         self.entry_letra = tk.Entry(master)
         self.entry_letra.pack(pady=10)
 
-        self.boton_adivinar = tk.Button(master, text="Adivinar", command=self.adivinar_letra)
+        self.boton_adivinar = tk.Button(master, text="Deviner", command=self.adivinar_letra)
         self.boton_adivinar.pack(pady=10)
 
     def obtener_palabra_aleatoria(self):
