@@ -1,6 +1,6 @@
 # importamos
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, END
 import random
 
 # creamos la clase
@@ -28,7 +28,8 @@ class JuegoAhorcado:
         uneletre.pack(pady=5)
 
         self.entry_letra = tk.Entry(root)
-        self.entry_letra.config(text="lettre")
+        self.entry_letra.insert(0, "Ecrire une lettre: ")
+        self.entry_letra.bind("<Button-1>", lambda d: self.entry_letra.delete(0, END))
         self.entry_letra.pack(pady=10)
 
         boton_adivinar = tk.Button(root, text="Deviner", command=self.adivinar_letra)
@@ -44,6 +45,7 @@ class JuegoAhorcado:
 
     def adivinar_letra(self):
         letra = self.entry_letra.get().lower()
+
 
         # logica
         if letra in self.letras_adivinadas:
